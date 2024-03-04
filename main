@@ -1,0 +1,124 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package arraysortingandhashmapsassignment;
+import java.util.*;
+import java.lang.*;
+
+/**
+ * @author taelr
+ */
+public class ArraySortingAndHashmapsAssignment {
+
+    /**
+     * @param args the command line arguments
+     */
+    
+    /*Data Structures and Algorithms Assignment Part 2
+     * This program asks a user to input a state and the program
+    returns the capital of that state*/
+    
+    public static void main(String[] args) {
+        //setup scanner to collect user input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Create Hashmap with US states names and capitals
+        Map <String, String> usStateCapitals = new HashMap<>();
+        usStateCapitals.put("Alabama", "Montgomery");
+        usStateCapitals.put("Alaska", "Juneau");
+        usStateCapitals.put("Arizona", "Phoenix");
+        usStateCapitals.put("Arkansas", "Little Rock");
+        usStateCapitals.put("California", "Sacramento");
+        usStateCapitals.put("Colorado", "Denver");
+        usStateCapitals.put("Connecticut", "Hartford");
+        usStateCapitals.put("Delaware", "Dover");
+        usStateCapitals.put("Florida", "Tallahassee");
+        usStateCapitals.put("Georgia", "Atlanta");
+        usStateCapitals.put("Hawaii", "Honolulu");
+        usStateCapitals.put("Idaho", "Boise");
+        usStateCapitals.put("Illinois", "Springfield");
+        usStateCapitals.put("Indiana", "Indianapolis");
+        usStateCapitals.put("Iowa", "Des Moines");
+        usStateCapitals.put("Kansas", "Topeka");
+        usStateCapitals.put("Kentucky","Frankfort");
+        usStateCapitals.put("Louisiana", "Baton Rouge");
+        usStateCapitals.put("Maine", "Augusta");
+        usStateCapitals.put("Maryland", "Annapolis");
+        usStateCapitals.put("Massachusetts", "Boston");
+        usStateCapitals.put("Michigan", "Lansing");
+        usStateCapitals.put("Minnesota", "Saint Paul");
+        usStateCapitals.put("Mississippi", "Jackson");
+        usStateCapitals.put("Missouri", "Jefferson City");
+        usStateCapitals.put("Montana", "Helena");
+        usStateCapitals.put("Nebraska", "Lincoln");
+        usStateCapitals.put("Nevada", "Carson City");
+        usStateCapitals.put("New Hampshire", "Concord");
+        usStateCapitals.put("New Jersey", "Trenton");
+        usStateCapitals.put("New Mexico", "Santa Fe");
+        usStateCapitals.put("New York", "Albany");
+        usStateCapitals.put("North Carolina", "Raleigh");
+        usStateCapitals.put("North Dakota", "Bismarck");
+        usStateCapitals.put("Ohio", "Columbus");
+        usStateCapitals.put("Oklahoma", "Oklahoma City");
+        usStateCapitals.put("Oregon", "Salem");
+        usStateCapitals.put("Pennsylvania", "Harrisburg");
+        usStateCapitals.put("Rhode Island", "Providence");
+        usStateCapitals.put("South Carolina", "Columbia");
+        usStateCapitals.put("South Dakota", "Pierre");
+        usStateCapitals.put("Tennessee", "Nashville");
+        usStateCapitals.put("Texas", "Austin");
+        usStateCapitals.put("Utah", "Salt Lake City");
+        usStateCapitals.put("Vermont", "Montpelier");
+        usStateCapitals.put("Virginia", "Richmond");
+        usStateCapitals.put("Washington", "Olympia");
+        usStateCapitals.put("West Virginia", "Charleston");
+        usStateCapitals.put("Wisconsin", "Madison");
+        usStateCapitals.put("Wyoming", "Cheyenne");
+                
+                 
+       //Display current contents of map with states and capitals in undetermined order
+       System.out.println("State Capitals");
+       for(Map.Entry<String, String> entry:usStateCapitals.entrySet()){
+           System.out.println(entry.getKey() + " - " + entry.getValue());
+       }
+       /*alternate way to print map
+       for(String state:usStateCapitals.keySet()){
+        String key = state;
+        String value = usStateCapitals.get(state);
+        System.out.println(key + " - " + value);
+        }
+       */
+       
+       System.out.println();
+       
+       //create a tree map to store sorted data
+       TreeMap<String, String> sortedStates = new TreeMap<>();
+       
+       //copy all data from hash map to tree map where it is automatically sorted
+       sortedStates.putAll(usStateCapitals);
+       
+       //display sorted map
+       System.out.println("Sorted States and Captials");
+       for(Map.Entry<String, String> entry:sortedStates.entrySet()){
+           System.out.println(entry.getKey() + "--" + entry.getValue());
+       }
+       
+       //explain instructions to the user
+        System.out.println("\n***********************************************************");
+        System.out.println("Enter any state to find out what the capital is.");
+        System.out.println("***********************************************************");
+       
+       //ask user to input a state
+           System.out.print("What is the capital of:  ");
+           String input = scanner.nextLine();
+        
+       //get the correct capital for the user inputted state
+       if(sortedStates.containsKey(input)){    
+            String cap = sortedStates.get(input);
+            System.out.println("The Capital of " + input + " is: " + cap);
+       } else {
+           System.out.println(input + " Check spelling and don't forget to capitalize proper nouns.");
+       }
+    }    
+}
