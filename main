@@ -6,9 +6,6 @@ package arraysortingandhashmapsassignment;
 import java.util.*;
 import java.lang.*;
 
-/**
- * @author taelr
- */
 public class ArraySortingAndHashmapsAssignment {
 
     /**
@@ -110,7 +107,7 @@ public class ArraySortingAndHashmapsAssignment {
         System.out.println("***********************************************************");
        
        //ask user to input a state
-           System.out.print("What is the capital of:  ");
+           System.out.print("What is the capital of: ");
            String input = scanner.nextLine();
         
        //get the correct capital for the user inputted state
